@@ -1,0 +1,387 @@
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.title {
+	font-size: 2.5rem;
+	font-weight: 900;
+	margin-bottom: 2rem;
+	letter-spacing: -1px;
+	background: #ffffff;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.settingsGroup {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	gap: 1rem;
+	padding: 2rem;
+	margin-bottom: 2rem;
+	backdrop-filter: blur(10px);
+}
+
+.labelSection {
+	margin-bottom: 2rem;
+}
+
+.labelText {
+	display: block;
+	color: #e0e0e0;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-size: 0.85rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.presetTimes {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+	gap: 0.75rem;
+}
+
+.presetBtn {
+	padding: 0.75rem;
+	background: rgba(255, 255, 255, 0.1);
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	color: #ffffff;
+	border-radius: 8px;
+	font-size: 0.9rem;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.2);
+		border-color: #ffffff;
+	}
+
+	&.active {
+		background: #ee5a2f;
+		color: #000;
+		border-color: #ee5a2f;
+	}
+}
+
+.customTimeSection {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.customLabelText {
+	display: block;
+	color: #e0e0e0;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-size: 0.85rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.intervalSection {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	padding: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.intervalLabelText {
+	display: block;
+	color: #e0e0e0;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-size: 0.85rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.intervalControl {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.intervalBtn {
+	width: 50px;
+	height: 50px;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	background: transparent;
+	color: #ee5a2f;
+	border-radius: 8px;
+	font-size: 1.5rem;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.1);
+		border-color: #ffffff;
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+}
+
+.intervalValue {
+	font-size: 1.3rem;
+	font-weight: 900;
+	color: #ffffff;
+	font-variant-numeric: tabular-nums;
+	min-width: 80px;
+	text-align: center;
+}
+
+.counterControl {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.counterBtn {
+	width: 50px;
+	height: 50px;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	background: transparent;
+	color: #ee5a2f;
+	border-radius: 8px;
+	font-size: 1.5rem;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.1);
+		border-color: #ffffff;
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+}
+
+.counterValue {
+	font-size: 1.3rem;
+	font-weight: 900;
+	color: #ffffff;
+	font-variant-numeric: tabular-nums;
+	min-width: 100px;
+	text-align: center;
+}
+
+.conesSection {
+	margin-bottom: 2rem;
+}
+
+.subtitle {
+	font-size: 1.3rem;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #e0e0e0;
+}
+
+.conesGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.75rem;
+	margin-bottom: 2rem;
+}
+
+.coneCard {
+	background: rgba(255, 255, 255, 0.05);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	border-radius: 12px;
+	padding: 0.75rem;
+	text-align: center;
+	transition: all 0.3s ease;
+	backdrop-filter: blur(10px);
+
+	&:hover {
+		border-color: #ffffff;
+		background: rgba(255, 255, 255, 0.05);
+	}
+}
+
+.colorBox {
+	width: 50px;
+	height: 50px;
+	border-radius: 6px;
+	margin: 0 auto 0.5rem;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	transition: transform 0.3s ease;
+
+	.coneCard:hover & {
+		transform: scale(1.05);
+	}
+}
+
+.coneName {
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	font-size: 0.9rem;
+}
+
+.editBtn {
+	padding: 0.35rem 0.75rem;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	background: transparent;
+	color: #ffffff;
+	border-radius: 4px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.1);
+		border-color: #ffffff;
+	}
+}
+
+.editConeForm {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 12px;
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.editFormRow {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.editConeInput {
+	flex: 1;
+	min-width: 150px;
+	padding: 0.75rem;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+	color: #ffffff;
+	font-size: 0.95rem;
+	font-weight: 600;
+
+	&:focus {
+		outline: none;
+		border-color: #ffffff;
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+	}
+}
+
+.editConeColorPicker {
+	width: 60px;
+	height: 50px;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.editConeSaveBtn {
+	padding: 0.5rem 1rem;
+	background: #ffffff;
+	border: none;
+	color: #000;
+	border-radius: 8px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 1.2rem;
+
+	&:hover {
+		background: #ee5a2f;
+		transform: scale(1.05);
+	}
+}
+
+.editConeCancelBtn {
+	padding: 0.5rem 0.75rem;
+	background: transparent;
+	border: 2px solid rgba(255, 100, 100, 0.4);
+	color: #ff6464;
+	border-radius: 8px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 1.2rem;
+
+	&:hover {
+		background: rgba(255, 100, 100, 0.1);
+		border-color: #ff6464;
+	}
+}
+
+.startBtn {
+	width: 100%;
+	padding: 1rem;
+	background: #1894d0;
+	border: none;
+	color: #fff;
+	font-size: 1.1rem;
+	font-weight: 900;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+	&:hover:not(:disabled) {
+		transform: translateY(-2px);
+		box-shadow: 0 5px 10px rgba(255, 255, 255, 0.191);
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
+
+@media (max-width: 600px) {
+	.container {
+		padding: 0;
+	}
+
+	.title {
+		font-size: 2rem;
+	}
+
+	.conesGrid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	.settingsGroup {
+		padding: 1.5rem;
+	}
+}

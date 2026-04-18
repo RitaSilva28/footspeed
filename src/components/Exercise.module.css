@@ -1,0 +1,278 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	min-height: auto;
+	animation: slideIn 0.3s ease;
+	padding: 2rem 0;
+	position: relative;
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+}
+
+@keyframes colorPulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+	}
+	70% {
+		box-shadow: 0 0 0 30px rgba(255, 255, 255, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.countdownOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+
+.countdownDisplay {
+	animation: scaleIn 0.3s ease;
+}
+
+.countdownNumber {
+	font-size: 15rem;
+	font-weight: 900;
+	margin: 0;
+	background: #ffffff;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	animation: pulse 1s ease-in-out;
+	letter-spacing: -5px;
+}
+
+.countdownGo {
+	font-size: 8rem;
+	font-weight: 900;
+	margin: 0;
+	background: #ffffff;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	letter-spacing: -2px;
+}
+
+.timerSection {
+	text-align: center;
+}
+
+.timer {
+	font-size: 4.5rem;
+	font-weight: 900;
+	margin: 0;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: -2px;
+	background: #ffffff;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.conesCalledCount {
+	font-size: 1.1rem;
+	color: #e0e0e0;
+	margin-top: 0.5rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.currentColorDisplay {
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem 0;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+	animation: colorPulse 1s ease-out;
+	border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.colorText {
+	font-size: 2.2rem;
+	font-weight: 900;
+	margin: 0;
+	color: rgba(0, 0, 0, 0.8);
+	text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.nextCallInfo {
+	font-size: 1rem;
+	color: #ffffff;
+	font-weight: 700;
+	margin-top: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.controls {
+	display: flex;
+	gap: 1rem;
+	margin: 2rem 0;
+}
+
+.startBtn {
+	padding: 1.2rem 3rem;
+	background: #EE5A2F;
+	border: none;
+	color: #ffffff;
+	font-size: 1.2rem;
+	font-weight: 900;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+
+	&:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+	}
+
+	&:active {
+		transform: translateY(-1px);
+	}
+}
+
+.cancelBtn {
+	padding: 1.2rem 2.5rem;
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	color: #ffffff;
+	font-size: 1rem;
+	font-weight: 700;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.1);
+		border-color: #ffffff;
+	}
+}
+
+.colorHistory {
+	width: 100%;
+	max-width: 500px;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 12px;
+	padding: 1.5rem;
+	backdrop-filter: blur(10px);
+}
+
+.historyTitle {
+	font-size: 0.95rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #e0e0e0;
+	margin: 0 0 1rem 0;
+}
+
+.colorHistoryList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.historyItem {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: rgba(255, 255, 255, 0.1);
+	padding: 0.5rem 1rem;
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	font-size: 0.9rem;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.historyDot {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+	.container {
+		min-height: auto;
+		padding: 1rem 0;
+	}
+
+	.timer {
+		font-size: 3.5rem;
+	}
+
+	.startCircle {
+		width: 90px;
+		height: 90px;
+	}
+
+	.currentColorDisplay {
+		width: 160px;
+		height: 160px;
+	}
+
+	.colorText {
+		font-size: 1.6rem;
+	}
+
+	.startBtn,
+	.cancelBtn {
+		padding: 0.9rem 1.5rem;
+		font-size: 1rem;
+	}
+}
