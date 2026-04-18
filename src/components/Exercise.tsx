@@ -30,6 +30,7 @@ export default function ExerciseScreen({
   const speakColor = useCallback((colorName: string) => {
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(colorName);
+      utterance.lang = 'en-US';
       utterance.rate = 1.2;
       speechSynthesis.speak(utterance);
     }
