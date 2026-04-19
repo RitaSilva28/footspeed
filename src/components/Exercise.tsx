@@ -31,7 +31,8 @@ export default function ExerciseScreen({
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(colorName);
       utterance.lang = 'en-US';
-      utterance.rate = 1.2;
+      utterance.rate = 1;
+      utterance.pitch = 1;  
       speechSynthesis.speak(utterance);
     }
   }, []);
