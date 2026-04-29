@@ -127,7 +127,7 @@
 		flex-direction: column;
 		align-items: stretch;
 		padding: 1rem;
-		padding-bottom: 0;
+		padding-bottom: 10px;
 	}
 
 	.logoImage {
@@ -159,13 +159,15 @@
 	}
 
 	.navBtn {
-		padding: 0.65rem 0.85rem;
-		font-size: 0.8rem;
+		padding: 0.40rem 0.60rem;
+		font-size: 0.6rem;
+		border-radius: 4px;
 	}
 
 	.userEmail {
-		max-width: 90px;
-		font-size: 0.7rem;
+		max-width: 80px;
+		font-size: 0.65rem;
+		
 	}
 
 	.content {
