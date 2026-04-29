@@ -9,6 +9,7 @@
 	flex-direction: column;
 }
 
+/* NAVBAR */
 .navbar {
 	background: rgba(0, 0, 0, 0.6);
 	backdrop-filter: blur(10px);
@@ -20,7 +21,6 @@
 	position: sticky;
 	top: 0;
 	z-index: 100;
-	position: sticky;
 }
 
 .navbar::after {
@@ -39,6 +39,7 @@
 	);
 }
 
+/* LOGO */
 .logoContainer {
 	display: flex;
 	align-items: center;
@@ -50,27 +51,20 @@
 	object-fit: contain;
 }
 
-.logo {
-	font-size: 1.8rem;
-	font-weight: 900;
-	margin: 0;
-	letter-spacing: -1px;
-	background: #ffffff;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-}
-
-.logoIcon {
-	font-size: 2.5rem;
-	color: #ee5a2f;
-}
-
+/* NAV GROUPS */
 .navButtons {
 	display: flex;
+	align-items: center;
 	gap: 1rem;
 }
 
+.navLeft {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+/* BUTTON */
 .navBtn {
 	display: inline-flex;
 	align-items: center;
@@ -88,22 +82,34 @@
 	position: relative;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
-
-	&:hover:not(:disabled):not(.active) {
-		background: rgba(255, 255, 255, 0.1);
-		color: #ffffff;
-	}
-
-	&.active {
-		background: #ffffff;
-		color: #000;
-	}
-
-	&:disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
-	}
 }
+
+.navBtn:hover:not(:disabled):not(.active) {
+	background: rgba(255, 255, 255, 0.1);
+	color: #ffffff;
+}
+
+.navBtn.active {
+	background: #ffffff;
+	color: #000;
+}
+
+.navBtn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* EMAIL */
+.userEmail {
+	max-width: 140px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 0.85rem;
+	opacity: 0.8;
+}
+
+/* CONTENT */
 .content {
 	flex: 1;
 	padding: 2rem;
@@ -112,33 +118,54 @@
 	margin: 0 auto;
 }
 
-.userEmail {
-	color: #ffffff;
-	opacity: 0.75;
-	font-size: 0.85rem;
-	font-weight: 600;
-	white-space: nowrap;
-}
+/* ===================== */
+/* MOBILE */
+/* ===================== */
 
 @media (max-width: 768px) {
 	.navbar {
-		padding: 1rem;
 		flex-direction: column;
-		gap: 1rem;
-		text-align: center;
+		align-items: stretch;
+		padding: 1rem;
+		padding-bottom: 0;
 	}
 
-	.logo {
-		font-size: 1.5rem;
+	.logoImage {
+		width: 220px;
+		align-self: center;
+	}
+
+	/* move line ABOVE buttons */
+	.navbar::after {
+		display: none;
 	}
 
 	.navButtons {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		border-top: 2px solid;
+		border-image: linear-gradient(to right, #ee5a2f, #00aeef) 1;
+
+		padding-top: 1rem;
+		margin-top: 1rem;
+	}
+
+	.navLeft {
+		display: flex;
 		gap: 0.5rem;
 	}
 
 	.navBtn {
-		padding: 0.5rem 1rem;
-		font-size: 0.85rem;
+		padding: 0.65rem 0.85rem;
+		font-size: 0.8rem;
+	}
+
+	.userEmail {
+		max-width: 90px;
+		font-size: 0.7rem;
 	}
 
 	.content {

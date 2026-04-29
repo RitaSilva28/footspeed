@@ -113,42 +113,51 @@ export default function MainApp({ userEmail, userId }: MainAppProps) {
   return (
     <div className={styles.app}>
       <nav className={styles.navbar}>
-        <img src={logo} alt="FootSpeed Logo" className={styles.logoImage} />
+  <img src={logo} alt="FootSpeed Logo" className={styles.logoImage} />
 
-        <div className={styles.navButtons}>
-          <button
-            className={`${styles.navBtn} ${
-              currentScreen === "settings" ? styles.active : ""
-            }`}
-            onClick={() => setCurrentScreen("settings")}
-            disabled={currentScreen === "exercise"}
-          >
-            <SettingsIcon size={18} />
-            <span>Settings</span>
-          </button>
+  <div className={styles.navButtons}>
+    <div className={styles.navLeft}>
+      <button
+        className={`${styles.navBtn} ${
+          currentScreen === "settings" ? styles.active : ""
+        }`}
+        onClick={() => setCurrentScreen("settings")}
+        disabled={currentScreen === "exercise"}
+      >
+        <SettingsIcon size={18} />
+        <span>Settings</span>
+      </button>
 
-          <button
-            className={`${styles.navBtn} ${
-              currentScreen === "history" ? styles.active : ""
-            }`}
-            onClick={() => setCurrentScreen("history")}
-            disabled={currentScreen === "exercise"}
-          >
-            <HistoryIcon size={18} />
-            <span>History</span>
-          </button>
+      <button
+        className={`${styles.navBtn} ${
+          currentScreen === "history" ? styles.active : ""
+        }`}
+        onClick={() => setCurrentScreen("history")}
+        disabled={currentScreen === "exercise"}
+      >
+        <HistoryIcon size={18} />
+        <span>History</span>
+      </button>
+    </div>
 
-         
+    <button
+      onClick={() => {
+        const confirmLogout = window.confirm(
+          "Are you sure you want to sign out?"
+        );
 
-          <button
-            onClick={() => supabase.auth.signOut()}
-            className={styles.navBtn}
-            aria-label="Sign out"
-          >{userEmail}
-            <LogOut size={24} />
-          </button>
-        </div>
-      </nav>
+        if (confirmLogout) {
+          supabase.auth.signOut();
+        }
+      }}
+      className={styles.navBtn}
+      aria-label="Sign out"
+    >
+      <span className={styles.userEmail}>{userEmail.split("@")[0]}</span>
+      <LogOut size={24} />
+    </button>
+  </div>
+</nav>
 
       <main className={styles.content}>
         {currentScreen === "settings" && (
