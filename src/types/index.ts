@@ -5,9 +5,14 @@ export interface ConeColor {
 }
 
 export interface ExerciseSettings {
-  duration: number; // in seconds
-  interval: number; // in seconds between color calls
+  duration: number;
+  interval: number;
   cones: ConeColor[];
+}
+
+export interface CalledColor {
+  name: string;
+  color: string;
 }
 
 export interface CompletedExercise {
@@ -16,7 +21,7 @@ export interface CompletedExercise {
   duration: number;
   interval: number;
   conesCount: number;
-  colorSequence: string[]; // names of colors called
+  colorSequence: CalledColor[];
 }
 
-export type Screen = 'settings' | 'exercise' | 'history';
+export type Screen = "settings" | "exercise" | "history";
