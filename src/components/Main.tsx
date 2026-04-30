@@ -10,6 +10,7 @@ import type { ExerciseSettings, CompletedExercise, Screen } from "../types";
 import Settings from "./Settings";
 import Exercise from "./Exercise";
 import History from "./History";
+import Footer from "./Footer";
 import styles from "./Main.module.css";
 
 type MainAppProps = {
@@ -180,6 +181,7 @@ export default function MainApp({ userEmail, userId }: MainAppProps) {
           />
         )}
       </main>
+      < Footer />
     </div>
   );
 }

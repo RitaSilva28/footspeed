@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../lib/supabase";
 import logo from "../assets/Logotitle.svg";
+import Footer from "./Footer";
 
 type AuthMode = "login" | "signup";
 
@@ -44,10 +45,17 @@ export default function Auth() {
 
   const switchMode = () => {
     const nextMode: AuthMode = isSignup ? "login" : "signup";
+
     setMode(nextMode);
 
     const nextParams = new URLSearchParams(window.location.search);
     nextParams.set("mode", nextMode);
+
+    if (nextMode === "signup") {
+      nextParams.set("intent", "buy");
+    } else {
+      nextParams.delete("intent");
+    }
 
     window.history.replaceState(
       {},
@@ -62,22 +70,54 @@ export default function Auth() {
         <img src={logo} alt="Footspeed" className="auth-logo" />
 
         <p className="auth-eyebrow">
-          {isSignup ? "CREATE ACCOUNT" : "WELCOME BACK"}
+          {isSignup ? "GET FULL ACCESS" : "WELCOME BACK"}
         </p>
 
         <h1>
           {isSignup
-            ? isBuying
-              ? "Create your account to unlock Footspeed."
-              : "Create your Footspeed account."
-            : "Log in to Footspeed."}
+            ? "Create your account to unlock Footspeed."
+            : "Log in to your Footspeed account."}
         </h1>
 
-        <p>
-          {isSignup
-            ? "Your account keeps your access connected to your email after purchase."
-            : "Access your trainer and continue your footspeed sessions."}
-        </p>
+       <p>
+  {isSignup && isBuying
+    ? "Create your account first. Your purchase will be connected to this email."
+    : "Log in to access your trainer and continue your sessions."}
+</p>
+
+{isSignup && (
+  <div className="auth-stepper-horizontal">
+    <div className="auth-step-horizontal active">
+      <div className="auth-step-marker">1</div>
+      <div>
+        <span>Step 1</span>
+        <p>Create account</p>
+        <small>In progress</small>
+      </div>
+    </div>
+
+    <div className="auth-step-line" />
+
+    <div className="auth-step-horizontal">
+      <div className="auth-step-marker">2</div>
+      <div>
+        <span>Step 2</span>
+        <p>Payment</p>
+        <small>Next</small>
+      </div>
+    </div>
+
+    <div className="auth-step-line" />
+
+    <div className="auth-step-horizontal">
+      <div className="auth-step-marker">3</div>
+      <div>
+        <span>Step 3</span>
+        <p>Start training</p>
+      </div>
+    </div>
+  </div>
+)}
 
         <div className="auth-form">
           <input
@@ -97,16 +137,17 @@ export default function Auth() {
           />
 
           <button className="auth-primary-btn" onClick={handleSubmit}>
-            {isSignup ? "Create account" : "Log in"}
+            {isSignup ? "Create account and continue" : "Log in"}
           </button>
         </div>
 
         <button className="auth-link-btn" onClick={switchMode}>
           {isSignup
             ? "Already have an account? Log in"
-            : "New here? Create an account"}
+            : "New here? Create account"}
         </button>
       </div>
+      <Footer />
     </div>
   );
 }
