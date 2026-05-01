@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
 import MainApp from "./components/Main";
-import Footer from "./components/Footer";
 import Auth from "./components/Auth";
 import { supabase } from "./lib/supabase";
 import "./App.css";
