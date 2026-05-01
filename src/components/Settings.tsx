@@ -75,7 +75,7 @@ export default function SettingsScreen({ onStartExercise }: SettingsScreenProps)
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Settings</h1>
+      <h1 className={styles.title}>Exercise Settings</h1>
 
       <div className={styles.settingsGroup}>
         <div className={styles.labelSection}>
